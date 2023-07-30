@@ -32,11 +32,11 @@ export function withLineNumbers(
         }
 
         const code = editor.textContent || ""
-        const linesCount = code.replace(/\n+$/, "\n").split("\n").length + 1
+        const linesCount = code.replace(/\n\n$/g, "\n").split("\n").length
 
         let text = ""
-        for (let i = 1; i < linesCount; i++) {
-            text += `${i}\n`
+        for (let i = 0; i < linesCount; i++) {
+            text += `${i + 1}\n`
         }
 
         lineNumbers.innerText = text
@@ -50,16 +50,21 @@ function init(editor: HTMLElement, opts: Options): HTMLElement {
     wrap.className = opts.wrapClass
     wrap.style.position = "relative"
 
+    const innerWrap = document.createElement("div");
+    innerWrap.className = "codejar-linenumbers-inner-wrap";
+    innerWrap.style.background = css.background;
+
     const gutter = document.createElement("div")
-    gutter.className = opts.class
-    wrap.appendChild(gutter)
+    gutter.className = opts.class;
+    innerWrap.appendChild(gutter);
+
+    wrap.appendChild(innerWrap)
 
     // Add own styles
     gutter.style.width = opts.width
     gutter.style.overflow = "hidden"
     gutter.style.backgroundColor = opts.backgroundColor
 
-    console.log(css);
     // Copy editor styles
     gutter.style.fontFamily = css.fontFamily
     gutter.style.fontSize = css.fontSize
@@ -77,7 +82,7 @@ function init(editor: HTMLElement, opts: Options): HTMLElement {
     gutter.appendChild(lineNumbers)
 
     // Tweak editor styles
-    editor.style.paddingLeft = `calc(${opts.width} + ${gutter.style.paddingLeft})`
+    editor.style.paddingLeft = `calc(${opts.width} + ${gutter.style.paddingLeft} + 5px)`
     editor.style.whiteSpace = "pre"
 
     // Swap editor with a wrap
