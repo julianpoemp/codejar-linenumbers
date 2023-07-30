@@ -1,0 +1,13 @@
+.codejar-linenumbers {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    mix-blend-mode: inherit;
+}
+
+.codejar-linenumber {
+    position: relative;
+    top: 0px;
+}
