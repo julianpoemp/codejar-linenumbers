@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.min.css"/>
+    <link rel="stylesheet" href="../dist/es/codejar-linenumbers.css"/>
+    <script type="importmap">
+        {
+            "imports": {
+              "codejar": "../node_modules/codejar/dist/codejar.js",
+              "codejar-linenumbers": "../dist/es/index.js"
+            }
+        }
+
+    </script>
+    <script type="module">
+        import {CodeJar} from 'codejar';
+        import {withLineNumbers} from "codejar-linenumbers";
+
+        window.onload = () => {
+            console.dir(CodeJar)
+            const editor = document.querySelector('.editor');
+            const highlight = (editor) => {
+                let code = editor.textContent
+                code = Prism.highlight(code, Prism.languages['javascript'], "javascript");
+                editor.innerHTML = code
+            }
+            const jar = CodeJar(editor, withLineNumbers(highlight), {tab: '\t'});
+            console.log(jar);
+            console.dir(jar);
+
+            // Get code
+            let code = jar.toString();
+
+            // Listen to updates
+            jar.onUpdate(code => {
+                console.log(code);
+            });
+        }
+    </script>
+</head>
+<body>
+<pre class="editor language-javascript"></pre>
+</body>
+<script type="application/javascript" src="../node_modules/prismjs/prism.js"></script>
+<script type="application/javascript" src="../node_modules/prismjs/components/prism-javascript.js"></script>
+</html>
