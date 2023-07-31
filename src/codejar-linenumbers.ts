@@ -53,6 +53,11 @@ function init(editor: HTMLElement, opts: Options): HTMLElement {
     const innerWrap = document.createElement("div");
     innerWrap.className = "codejar-linenumbers-inner-wrap";
     innerWrap.style.background = css.background;
+    innerWrap.style.marginTop = css.borderTopWidth;
+    innerWrap.style.marginBottom = css.borderBottomWidth;
+    innerWrap.style.marginLeft = css.borderLeftWidth;
+    innerWrap.style.borderTopLeftRadius = css.borderTopLeftRadius;
+    innerWrap.style.borderBottomLeftRadius = css.borderBottomLeftRadius;
 
     const gutter = document.createElement("div")
     gutter.className = opts.class;
@@ -69,7 +74,7 @@ function init(editor: HTMLElement, opts: Options): HTMLElement {
     gutter.style.fontFamily = css.fontFamily
     gutter.style.fontSize = css.fontSize
     gutter.style.lineHeight = css.lineHeight
-    gutter.style.paddingTop = `calc(${css.paddingTop} + ${css.borderTopWidth})`;
+    gutter.style.paddingTop = `calc(${css.paddingTop})`;
     gutter.style.paddingLeft = css.paddingLeft
     gutter.style.borderTopLeftRadius = css.borderTopLeftRadius
     gutter.style.borderBottomLeftRadius = css.borderBottomLeftRadius;
