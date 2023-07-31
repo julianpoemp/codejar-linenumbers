@@ -2,6 +2,7 @@
 import typescript from "@rollup/plugin-typescript";
 import {terser} from "rollup-plugin-terser";
 import {scriptName, namespaceName} from "./rollup.globals";
+import copy from "rollup-plugin-copy";
 
 export default {
     input: 'src/index.ts',
@@ -22,10 +23,15 @@ export default {
     ],
     plugins: [
         typescript({
-            target: "ES5",
+            target: "es2020",
             declaration: true,
             outDir: "dist/js",
             rootDir: "src"
+        }),
+        copy({
+            targets: [
+                { src: 'src/codejar-linenumbers.css', dest: 'dist/js' }
+            ]
         })
     ]
 };
