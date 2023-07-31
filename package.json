@@ -1,6 +1,6 @@
 {
   "name": "codejar-linenumbers",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Small package providing line numbers for CodeJar code editor.",
   "main": "src/index.ts",
   "peerDependencies": {
