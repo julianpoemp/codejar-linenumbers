@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/julianpoemp/codejar-linenumbers/compare/v1.0.0...v1.0.1) (2023-10-28)
+
+
+### Bug Fixes
+
+* **codejar-linenumbers:** remove the extra line number at the bottom ([8f4cc2d](https://github.com/julianpoemp/codejar-linenumbers/commit/8f4cc2d173f2b450715ce93bb9b0ffbb6bca4262))
+
+
+
 # 1.0.0 (2023-07-31)
 
 
