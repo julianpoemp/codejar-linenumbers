@@ -32,7 +32,7 @@ export function withLineNumbers(
         }
 
         const code = editor.textContent || ""
-        const linesCount = code.replace(/\n\n$/g, "\n").split("\n").length
+        const linesCount = code.replace(/\n$/g, "").split("\n").length
 
         let text = ""
         for (let i = 0; i < linesCount; i++) {
