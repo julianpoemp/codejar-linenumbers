@@ -39,7 +39,7 @@ CodeJar 4 dropped the line numbers feature. This package returns it.
 ````HTML
 <!-- place the CSS file after the HighlightJS/PrismJS stylesheets -->
 <link rel="stylesheet" href="https://unpkg.com/codejar-linenumbers/es/codejar-linenumbers.css"/>
-<script type="application/javascript" src="https://unpkg.com/codejar-linenumbers/es/codejar-linenumbers.js"></script>
+<script type="application/javascript" src="https://unpkg.com/codejar-linenumbers/es/index.js"></script>
 ````
 
 
@@ -57,7 +57,7 @@ const jar = CodeJar(editor, withLineNumbers(highlight), {tab: '\t'});
 ### Javascript
 
 ### ESM
-See `demo/index.html` for an example how to use this package in an HTML file using ESM.
+For static HTML see example here: https://codepen.io/julianpoemp/pen/jOjgQzG .
 
 ### Vanilla JS
 Make sure that the `codejar-linenumbers/js/codejar-linenumbers.js` file was loaded.
