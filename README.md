@@ -2,6 +2,10 @@
 
 Third party package that enables line numbers on [CodeJar](https://github.com/antonmedv/codejar) code editor for version >= 4. It's already used by [ngx-codejar](https://github.com/julianpoemp/ngx-codejar) - an Angular wrapper for Codejar.
 
+## Demo
+
+https://codepen.io/julianpoemp/full/jOjgQzG
+
 ## Background
 
 CodeJar 4 dropped the line numbers feature. This package returns it.
