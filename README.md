@@ -20,7 +20,7 @@ CodeJar 4 dropped the line numbers feature. This package returns it.
 ````HTML
 <!-- place the CSS file after the HighlightJS/PrismJS stylesheets -->
 <link rel="stylesheet" href="<node_modules_dir>/codejar-linenumbers/js/codejar-linenumbers.css"/>
-<script type="application/javascript" src="<node_modules_dir>/codejar-linenumbers/js/codejar-linenumbers.js"></script>
+<script type="application/javascript" src="<node_modules_dir>/codejar-linenumbers/js/codejar-linenumbers.min.js"></script>
 ````
 
 4. If you want to use this library with ESM or Typescript, don't forget to load the `codejar-linenumbers.css` file into your app.
@@ -31,7 +31,7 @@ CodeJar 4 dropped the line numbers feature. This package returns it.
 ````HTML
 <!-- place the CSS file after the HighlightJS/PrismJS stylesheets -->
 <link rel="stylesheet" href="https://unpkg.com/codejar-linenumbers/js/codejar-linenumbers.css"/>
-<script type="application/javascript" src="https://unpkg.com/codejar-linenumbers/js/codejar-linenumbers.js"></script>
+<script type="application/javascript" src="https://unpkg.com/codejar-linenumbers/js/codejar-linenumbers.min.js"></script>
 ````
 
 #### ESM
@@ -60,7 +60,7 @@ const jar = CodeJar(editor, withLineNumbers(highlight), {tab: '\t'});
 For static HTML see example here: https://codepen.io/julianpoemp/pen/jOjgQzG .
 
 ### Vanilla JS
-Make sure that the `codejar-linenumbers/js/codejar-linenumbers.js` file was loaded.
+Make sure that the `codejar-linenumbers/js/codejar-linenumbers.min.js` file was loaded.
 
 ````Javascript
 var jar = CodeJar(editor, CodeJar.withLineNumbers(highlight), {tab: '\t'});
